@@ -40,6 +40,14 @@ void Paddle::move(double timeUpdate)
 	{
 		position.x = position.x - velocity.x * (float)timeUpdate;
 	}
+	if (position.x > 800)
+	{
+		position.x = -50.0f;
+	}
+	if (position.x < -50)
+	{
+		position.x = 800.0f;
+	}
 }
 
 bool Paddle::launchBall()

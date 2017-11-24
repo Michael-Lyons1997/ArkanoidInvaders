@@ -1,7 +1,6 @@
 #include "Ball.h"
 
 
-
 Ball::Ball()
 {
 	position.x = 400.0f;
@@ -26,11 +25,11 @@ void Ball::update(double timeUpdate)
 	{
 		velocity.x = velocity.x * -1;
 	}
-	if (position.y <= 0 || position.y >= 805)
+	if (position.y <= 0)
 	{
 		velocity.y = velocity.y * -1;
 	}
-	if (position.y >= 605)
+	if (position.y > 610)
 	{
 		alive = false;
 	}
@@ -60,4 +59,9 @@ void Ball::setLaunch(bool newLaunch)
 bool Ball::getLaunch()
 {
 	return ballLaunch;
+}
+
+void Ball::bounce()
+{
+	velocity.y = velocity.y * -1;
 }

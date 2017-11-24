@@ -12,6 +12,7 @@ public:
 	bool getAlive();
 	void setLaunch(bool newLaunch);
 	bool getLaunch();
+	void bounce();
 private:
 	sf::CircleShape ball;
 	sf::Vector2f position;

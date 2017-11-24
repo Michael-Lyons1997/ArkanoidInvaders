@@ -50,6 +50,10 @@ void Game::update(double dt)
 		newBall.update(dt);
 	}
 	player.update(dt);
+	if (newBall.getBody().getGlobalBounds().intersects(player.getBody().getGlobalBounds()))
+	{
+		newBall.bounce();
+	}
 }
 
 void Game::render()
